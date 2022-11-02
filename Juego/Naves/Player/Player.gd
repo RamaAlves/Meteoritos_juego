@@ -10,6 +10,9 @@ export var potencia_rotacion:int =240
 var empuje:Vector2 = Vector2.ZERO
 var dir_rotacion:int = 0
 
+##Atributos onready
+onready var canion:Canion =$Canion
+
 ## Metodos
 func _integrate_forces(state: Physics2DDirectBodyState) -> void:
 	apply_central_impulse(empuje.rotated(rotation))
@@ -34,6 +37,12 @@ func player_input() -> void:
 		dir_rotacion+=1
 	elif Input.is_action_pressed("rotar_antihorario"):
 		dir_rotacion-=1
+	
+	#Disparo
+	if Input.is_action_pressed("disparo_base"):
+		canion.set_esta_disparando(true)
+	if Input.is_action_just_released("disparo_base"):
+		canion.set_esta_disparando(false)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
