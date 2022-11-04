@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/laserLargeSecundario.ogg-8072a5ae32dfc6785c40b5ce84a306ac.oggstr"
+
+[deps]
+
+source_file="res://Juego/Proyectiles/Proyectiles_player/Laser/laserLargeSecundario.ogg"
+dest_files=[ "res://.import/laserLargeSecundario.ogg-8072a5ae32dfc6785c40b5ce84a306ac.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
