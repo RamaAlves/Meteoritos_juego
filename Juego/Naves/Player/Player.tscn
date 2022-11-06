@@ -7,6 +7,9 @@
 [ext_resource path="res://Juego/Proyectiles/Proyectiles_player/Laser/LaserBeam2D.tscn" type="PackedScene" id=5]
 
 [node name="Player" type="RigidBody2D"]
+z_index = 50
+z_as_relative = false
+collision_mask = 22
 physics_material_override = ExtResource( 3 )
 gravity_scale = 0.0
 can_sleep = false
@@ -33,5 +36,8 @@ position = Vector2( 0, 47 )
 
 [node name="LaserBeam2D" parent="." instance=ExtResource( 5 )]
 position = Vector2( 38, 0 )
+z_index = 41
+z_as_relative = false
+collision_mask = 6
 
 [editable path="Canion"]
