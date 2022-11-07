@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Juego/Naves/Player/MotorPlayer.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Juego/Naves/Player/motor/MotorSFX.gd" type="Script" id=2]
+
+[node name="MotorSFX" type="AudioStreamPlayer2D"]
+stream = ExtResource( 1 )
+bus = "SFX"
+script = ExtResource( 2 )
+tiempo_transicion = 0.7
+volumen_original = 1.0
+
+[node name="Tween" type="Tween" parent="."]

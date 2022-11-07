@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/MotorPlayer.ogg-5b19e8eaf74c39b7fda3ce2a43a3109e.oggstr"
+
+[deps]
+
+source_file="res://Juego/Naves/Player/MotorPlayer.ogg"
+dest_files=[ "res://.import/MotorPlayer.ogg-5b19e8eaf74c39b7fda3ce2a43a3109e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
