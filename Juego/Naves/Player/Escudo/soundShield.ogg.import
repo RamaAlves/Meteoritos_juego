@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/soundShield.ogg-774a87b99ed35e9bd0688adfc9d3f7ae.oggstr"
+
+[deps]
+
+source_file="res://Juego/Naves/Player/Escudo/soundShield.ogg"
+dest_files=[ "res://.import/soundShield.ogg-774a87b99ed35e9bd0688adfc9d3f7ae.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
