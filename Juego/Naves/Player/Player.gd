@@ -9,6 +9,7 @@ enum ESTADO{SPAWN,VIVO,INVENCIBLE,MUERTO}
 export var potencia_motor:int = 20
 export var potencia_rotacion:int =240
 export var estela_maxima:int =170
+export var hitpoints:float =15.0
 
 ## atributos
 var empuje:Vector2 = Vector2.ZERO
@@ -21,6 +22,8 @@ onready var laser:RayoLaser=$LaserBeam2D
 onready var estela:Estela=$EstelaPuntoInicio/Trail2D
 onready var motor_sfx:Motor = $MotorSFX
 onready var colisionador:CollisionPolygon2D =$CollisionPolygon2D
+onready var impacto_sfx:AudioStreamPlayer= $ImpactoSFX
+onready var escudo:Escudo = $Escudo
 
 ## Metodos
 func _unhandled_input(event: InputEvent) -> void:
@@ -44,17 +47,21 @@ func _unhandled_input(event: InputEvent) -> void:
 		laser.set_is_casting(true)
 	if event.is_action_released("disparo_secundario"):
 		laser.set_is_casting(false)
+	
+	#control escudo
+	if event.is_action_pressed("escudo") and not escudo.get_esta_activado():
+		escudo.activar()
 
 func _ready()->void:
 	controlador_estados(estado_actual)
 	##TODO:quitar, solo DEBUG
 	#controlador_estados(ESTADO.VIVO)
 
-func _integrate_forces(state: Physics2DDirectBodyState) -> void:
+func _integrate_forces(_state: Physics2DDirectBodyState) -> void:
 	apply_central_impulse(empuje.rotated(rotation))
 	apply_torque_impulse(dir_rotacion*potencia_rotacion)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	player_input()
 
 
@@ -108,6 +115,12 @@ func player_input() -> void:
 		canion.set_esta_disparando(true)
 	if Input.is_action_just_released("disparo_base"):
 		canion.set_esta_disparando(false)
+
+func recibir_danio(danio:float)->void:
+	hitpoints-=danio
+	if hitpoints<= 0.0:
+		destruir()
+	impacto_sfx.play()
 
 func destruir()->void:
 	controlador_estados(ESTADO.MUERTO)
