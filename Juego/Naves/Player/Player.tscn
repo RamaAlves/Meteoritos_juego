@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Juego/Naves/Player/playerShipBlue.png" type="Texture" id=1]
 [ext_resource path="res://Juego/Naves/Player/Player.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Juego/Proyectiles/Proyectiles_player/Laser/LaserBeam2D.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Juego/Naves/Player/estela/Trail2D.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Juego/Naves/Player/motor/MotorSFX.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Juego/Naves/Player/danioPlayer.ogg" type="AudioStream" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Default"
@@ -85,12 +86,16 @@ is_emitting = true
 lifetime = 0.6
 max_points = 150
 
-[node name="MotorSFX" parent="." instance=ExtResource( 7 )]
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Spawn"
 anims/Default = SubResource( 1 )
 anims/Spawn = SubResource( 2 )
+
+[node name="MotorSFX" parent="." instance=ExtResource( 7 )]
+
+[node name="ImpactoSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+bus = "SFX"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 
