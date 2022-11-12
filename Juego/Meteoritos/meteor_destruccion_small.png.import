@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sparkle.png-3f6a472509d842647289ac4c5c502f1d.stex"
+path="res://.import/meteor_destruccion_small.png-c32b4e509d2bfac4f1793dfac44c1620.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Juego/Explosiones/sparkle.png"
-dest_files=[ "res://.import/sparkle.png-3f6a472509d842647289ac4c5c502f1d.stex" ]
+source_file="res://Juego/Meteoritos/meteor_destruccion_small.png"
+dest_files=[ "res://.import/meteor_destruccion_small.png-c32b4e509d2bfac4f1793dfac44c1620.stex" ]
 
 [params]
 

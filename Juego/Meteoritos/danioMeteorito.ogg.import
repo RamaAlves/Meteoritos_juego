@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/danioMeteorito.ogg-8b13b13c33358e39c3539a845014802a.oggstr"
+
+[deps]
+
+source_file="res://Juego/Meteoritos/danioMeteorito.ogg"
+dest_files=[ "res://.import/danioMeteorito.ogg-8b13b13c33358e39c3539a845014802a.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

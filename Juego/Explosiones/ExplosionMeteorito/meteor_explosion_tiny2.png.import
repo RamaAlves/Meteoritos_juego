@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/puff.png-ad09ee7d001c96066e74eb7f6ed1573a.stex"
+path="res://.import/meteor_explosion_tiny2.png-d7a6deceaf8874ca767fdb08a2a13cc4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Juego/Explosiones/puff.png"
-dest_files=[ "res://.import/puff.png-ad09ee7d001c96066e74eb7f6ed1573a.stex" ]
+source_file="res://Juego/Explosiones/ExplosionMeteorito/meteor_explosion_tiny2.png"
+dest_files=[ "res://.import/meteor_explosion_tiny2.png-d7a6deceaf8874ca767fdb08a2a13cc4.stex" ]
 
 [params]
 

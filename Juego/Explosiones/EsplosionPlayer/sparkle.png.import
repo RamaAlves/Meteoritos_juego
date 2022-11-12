@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/puff_smooth.png-695e17480c064abad69cf209a787106f.stex"
+path="res://.import/sparkle.png-2a41f51222252f29728152e6c7605e96.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Juego/Explosiones/puff_smooth.png"
-dest_files=[ "res://.import/puff_smooth.png-695e17480c064abad69cf209a787106f.stex" ]
+source_file="res://Juego/Explosiones/EsplosionPlayer/sparkle.png"
+dest_files=[ "res://.import/sparkle.png-2a41f51222252f29728152e6c7605e96.stex" ]
 
 [params]
 
