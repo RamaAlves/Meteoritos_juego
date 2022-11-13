@@ -10,10 +10,7 @@ export var rango_tamanio_meteorito:Vector2 = Vector2(0.5,2.2)
 
 #Metodos
 func _ready() -> void:
-	#temporal
-	yield(owner, "ready")
-	spawnear_meteorito()
-
+	pass
 func spawnear_meteorito()->void:
 	Eventos.emit_signal(
 		"spawn_meteorito",

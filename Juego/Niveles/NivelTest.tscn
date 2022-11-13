@@ -4,11 +4,11 @@
 [ext_resource path="res://Juego/Explosiones/EsplosionPlayer/Explosion.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Juego/Niveles/Nivel.gd" type="Script" id=3]
 [ext_resource path="res://default_env.tres" type="Environment" id=4]
-[ext_resource path="res://Juego/Enemigos/EnemigoDummy.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Juego/Meteoritos/MeteoritoSpawner.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Juego/Peligros/SectorDePeligro.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Juego/Meteoritos/Meteorito.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Juego/Explosiones/ExplosionMeteorito/ExplosionMeteorito.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Juego/Niveles/Fondos/fondoPrueba.png" type="Texture" id=9]
+[ext_resource path="res://Juego/Meteoritos/SectorMeteoritos.tscn" type="PackedScene" id=10]
 
 [node name="NivelTest" type="Node2D"]
 script = ExtResource( 3 )
@@ -18,6 +18,7 @@ __meta__ = {
 explosion_player = ExtResource( 2 )
 meteorito = ExtResource( 7 )
 explosion_meteorito = ExtResource( 8 )
+sector_meteoritos = ExtResource( 10 )
 
 [node name="Fondo" type="Sprite" parent="."]
 position = Vector2( 15, 211 )
@@ -30,21 +31,12 @@ position = Vector2( 523, 292 )
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 4 )
 
-[node name="EnemigoDummy" parent="." instance=ExtResource( 5 )]
-position = Vector2( 725, 174 )
+[node name="TriggersLluviaMeteoritos" type="Node" parent="."]
 
-[node name="MeteoritoSpawner" parent="." instance=ExtResource( 6 )]
-position = Vector2( 187, 125 )
-direccion = Vector2( 2, 1 )
+[node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" instance=ExtResource( 5 )]
+position = Vector2( 1124, 504 )
+numero_peligros = 3
 
-[node name="MeteoritoSpawner2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1539, 164 )
-direccion = Vector2( -2, 1 )
+[node name="CameraNivel" type="Camera2D" parent="."]
 
-[node name="MeteoritoSpawner3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 381, 891 )
-direccion = Vector2( 2, -1 )
-
-[node name="MeteoritoSpawner4" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1618, 885 )
-direccion = Vector2( -2, -1 )
+[node name="TweenCamara" type="Tween" parent="."]
