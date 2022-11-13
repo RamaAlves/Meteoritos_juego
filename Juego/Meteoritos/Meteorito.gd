@@ -1,5 +1,4 @@
 #meteorito.gd
-
 class_name Meteorito
 extends RigidBody2D
 
@@ -17,6 +16,7 @@ var hitpoints:float
 var esta_en_sector:bool = true setget set_esta_en_sector
 var pos_spawn_original:Vector2
 var vel_spawn_original:Vector2
+var esta_destruido:bool=false
 
 ##Setters y Getters
 func set_esta_en_sector(valor:bool)->void:
@@ -58,9 +58,10 @@ func _integrate_forces(state: Physics2DDirectBodyState)->void:
 ##Metodos Custom
 func recibir_danio(danio:float)->void:
 	hitpoints-=danio
-	animacion_destruccion.play("destruccion")
-	if hitpoints<=0:
+	if hitpoints<=0 and not esta_destruido:
+		esta_destruido=true
 		destruir()
+	animacion_destruccion.play("destruccion")
 	impacto_sfx.play()
 
 func destruir() -> void:
