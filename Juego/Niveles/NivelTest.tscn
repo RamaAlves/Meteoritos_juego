@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Juego/Naves/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Juego/Explosiones/EsplosionPlayer/Explosion.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Juego/Explosiones/ExplosionMeteorito/ExplosionMeteorito.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Juego/Niveles/Fondos/fondoPrueba.png" type="Texture" id=9]
 [ext_resource path="res://Juego/Meteoritos/SectorMeteoritos.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Juego/Estaciones/EstacionRecarga.tscn" type="PackedScene" id=11]
 
 [node name="NivelTest" type="Node2D"]
 script = ExtResource( 3 )
@@ -35,7 +36,7 @@ environment = ExtResource( 4 )
 [node name="TriggersLluviaMeteoritos" type="Node" parent="."]
 
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" instance=ExtResource( 5 )]
-position = Vector2( 1124, 504 )
+position = Vector2( 2196, 264 )
 numero_peligros = 3
 
 [node name="CameraNivel" type="Camera2D" parent="."]
@@ -44,5 +45,8 @@ script = ExtResource( 6 )
 [node name="TweenZoom" type="Tween" parent="CameraNivel"]
 
 [node name="TweenCamara" type="Tween" parent="."]
+
+[node name="Estacion de recarga" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1324, 572 )
 
 [connection signal="tween_completed" from="TweenCamara" to="." method="_on_TweenCamara_tween_completed"]
